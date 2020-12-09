@@ -1,24 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="After Noon" translatesAutoresizingMaskIntoConstraints="NO" id="CSp-JV-1VP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TConverter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOB-Ha-TPW">
+                                <rect key="frame" x="124" y="116" width="166" height="50"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32ºF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZI-Tr-995">
+                                <rect key="frame" x="173.5" y="508" width="67" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="8HA-ES-B0M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8A3-XZ-coZ">
+                                <rect key="frame" x="95" y="438" width="224" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="4eV-0X-B23"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="fIr-Ma-nKB"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnb-AB-Qva">
+                                <rect key="frame" x="180" y="359" width="54" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="y9I-XL-7jX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="CSp-JV-1VP" secondAttribute="top" constant="44" id="3ux-ah-aTQ"/>
+                            <constraint firstItem="dnb-AB-Qva" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5lQ-5K-gVa"/>
+                            <constraint firstItem="8A3-XZ-coZ" firstAttribute="top" secondItem="dnb-AB-Qva" secondAttribute="bottom" constant="40" id="60n-sE-lta"/>
+                            <constraint firstItem="8A3-XZ-coZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9bC-LU-65h"/>
+                            <constraint firstItem="CSp-JV-1VP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="Exa-Bo-kHU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CSp-JV-1VP" secondAttribute="trailing" id="Lvj-m6-peh"/>
+                            <constraint firstItem="IZI-Tr-995" firstAttribute="top" secondItem="8A3-XZ-coZ" secondAttribute="bottom" constant="40" id="Mm3-6y-GBt"/>
+                            <constraint firstItem="jOB-Ha-TPW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QGA-2z-R2w"/>
+                            <constraint firstItem="CSp-JV-1VP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xfq-5k-o8M"/>
+                            <constraint firstItem="8A3-XZ-coZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="aLv-3G-9KN"/>
+                            <constraint firstItem="jOB-Ha-TPW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="db3-hU-p02"/>
+                            <constraint firstItem="IZI-Tr-995" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yBL-Sq-MlW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="celsius" destination="dnb-AB-Qva" id="c6g-Os-saC"/>
+                        <outlet property="fahrenheit" destination="IZI-Tr-995" id="OtU-oa-wyl"/>
+                        <outlet property="slider" destination="8A3-XZ-coZ" id="yvE-Oy-7ht"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="After Noon" width="375" height="667"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
